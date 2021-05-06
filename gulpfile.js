@@ -34,7 +34,7 @@ var paths = {
   },
   svgs: {
     input: 'src/svg/*.svg',
-    output: 'dist/svg/',
+    output: 'dist/static/svg/',
   },
   static: {
     input: 'src/static/**/*',
