@@ -1,0 +1,66 @@
+{
+  "name": "shopper-stops",
+  "version": "1.0.0",
+  "description": "Markup for my shoppers stop nodejs ecommerce web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SathishBublu/shopper-stops-markup.git"
+  },
+  "keywords": [
+    "nodejs",
+    "nodejs-ecommerce",
+    "ecommerce",
+    "mongodb",
+    "express"
+  ],
+  "author": "SathishBublu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SathishBublu/shopper-stops-markup/issues"
+  },
+  "homepage": "https://github.com/SathishBublu/shopper-stops-markup#readme",
+  "browserslist": [
+    "last 2 versions",
+    "> 0.25%"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "browser-sync": "^2.26.14",
+    "cssnano": "^5.0.2",
+    "del": "^6.0.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-header": "^2.0.9",
+    "gulp-jshint": "^2.1.0",
+    "gulp-optimize-js": "^1.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-svgmin": "^3.0.0",
+    "gulp-terser": "^2.0.1",
+    "jshint": "^2.12.0",
+    "jshint-stylish": "^2.2.1",
+    "lazypipe": "^1.0.2",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "bootstrap-table": "^1.18.3",
+    "flickity": "^2.2.2",
+    "list.js": "^2.3.1",
+    "simplebar": "^5.3.2"
+  }
+}
