@@ -4,11 +4,139 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+    <title>Shopper Stops | Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/feathers.min.css" />
     <link rel="stylesheet" type="text/css" href="css/main.min.css" />
   </head>
   <body>
-    <h1>Hello World</h1>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-3 border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="/">Shopper Stops.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fe fe-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=men">Men</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=women">Women</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=kids">Kids</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <!-- ### If there is no user is logged in show this buttons -->
+
+            <!-- Login -->
+            <!-- <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./login.html">
+            <i class="fe fe-log-in me-1"></i>
+            Login
+          </a>
+        </li>
+      -->
+
+            <!-- Register -->
+            <!--
+        <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./register.html">
+            <i class="fe fe-user-plus me-1"></i>
+            Register
+          </a>
+        </li>
+        -->
+
+            <!-- ### Else if there is logged in user show these button -->
+            <!-- ### Need to be implemented in the future ### -->
+            <!-- <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="modal" href="#modalSearch">
+            <i class="fe fe-search"></i>
+          </a>
+        </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="accountDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fe fe-user"></i>
+                <span class="d-lg-none">example@gmail.com</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="accountDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/account.html">Account</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-orders.html">Orders</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-address.html">Shipping Address</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./account-wishlist.html">
+                <i class="fe fe-heart"></i>
+                <span class="d-lg-none">Wishlist</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalShoppingCart">
+                <span data-cart-items="2">
+                  <i class="fe fe-shopping-cart"></i>
+                </span>
+                <span class="d-lg-none ms-2">Cart</span>
+              </a>
+            </li>
+            <li class="nav-item ml-lg-n4">
+              <a class="nav-link" href="./logout.html">
+                <i class="fe fe-log-out me-1"></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Scripts -->
     <script src="js/index.min.js"></script>
   </body>
