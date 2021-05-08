@@ -1,11 +1,9 @@
-/* eslint-disable */
-
 /**
  * Settings
  * Turn on/off build features
  */
 
-var settings = {
+const settings = {
   clean: true,
   scripts: true,
   polyfills: true,
@@ -20,7 +18,7 @@ var settings = {
  * Paths to project folders
  */
 
-var paths = {
+const paths = {
   input: 'src/',
   output: 'dist/',
   scripts: {
@@ -51,16 +49,15 @@ var paths = {
  * Template for banner to add to file headers
  */
 
-var banner = {
-  main:
-    '/*!' +
-    ' <%= package.name %> v<%= package.version %>' +
-    ' | (c) ' +
-    new Date().getFullYear() +
-    ' <%= package.author %>' +
-    ' | <%= package.license %> License' +
-    ' | <%= package.repository.url %>' +
-    ' */\n',
+const banner = {
+  main: `/*! 
+          <%= package.name %> v<%= package.version %> 
+          | (c) 
+          ${new Date().getFullYear()}  
+          <%= package.author %> 
+          | <%= package.license %> License 
+          | <%= package.repository.url %>  
+          */\n`,
 };
 
 /**
@@ -68,39 +65,41 @@ var banner = {
  */
 
 // General
-var { gulp, src, dest, watch, series, parallel } = require('gulp');
-var del = require('del');
-var flatmap = require('gulp-flatmap');
-var lazypipe = require('lazypipe');
-var rename = require('gulp-rename');
-var header = require('gulp-header');
-var packageJSON = require('./package.json');
+const { src, dest, watch, series, parallel } = require('gulp');
+const del = require('del');
+const flatmap = require('gulp-flatmap');
+const lazypipe = require('lazypipe');
+const rename = require('gulp-rename');
+const header = require('gulp-header');
 
 // Scripts
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
-var concat = require('gulp-concat');
-var uglify = require('gulp-terser');
-var optimizejs = require('gulp-optimize-js');
+const concat = require('gulp-concat');
+const uglify = require('gulp-terser');
+const bro = require('gulp-bro');
+const babelify = require('babelify');
 
 // Styles
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var prefix = require('autoprefixer');
-var minify = require('cssnano');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const prefix = require('autoprefixer');
+const minify = require('cssnano');
+const purgecss = require('gulp-purgecss');
 
 // SVGs
-var svgmin = require('gulp-svgmin');
+const svgmin = require('gulp-svgmin');
 
 // BrowserSync
-var browserSync = require('browser-sync');
+const browserSync = require('browser-sync');
+
+// Banner Config
+const packageJSON = require('./package.json');
 
 /**
  * Gulp Tasks
  */
 
 // Remove pre-existing content from output folders
-var cleanDist = function (done) {
+const cleanDist = function (done) {
   // Make sure this feature is activated before running
   if (!settings.clean) return done();
 
@@ -112,28 +111,29 @@ var cleanDist = function (done) {
 };
 
 // Repeated JavaScript tasks
-var jsTasks = lazypipe()
+const jsTasks = lazypipe()
   .pipe(header, banner.main, { package: packageJSON })
-  .pipe(optimizejs)
+  .pipe(bro, {
+    transform: [babelify.configure({ presets: ['@babel/env'] }), ['babelify', { global: true }]],
+  })
   .pipe(dest, paths.scripts.output)
   .pipe(rename, { suffix: '.min' })
   .pipe(uglify)
-  .pipe(optimizejs)
   .pipe(header, banner.main, { package: packageJSON })
   .pipe(dest, paths.scripts.output);
 
 // Lint, minify, and concatenate scripts
-var buildScripts = function (done) {
+const buildScripts = function (done) {
   // Make sure this feature is activated before running
   if (!settings.scripts) return done();
 
   // Run tasks on script files
   return src(paths.scripts.input).pipe(
-    flatmap(function (stream, file) {
+    flatmap((stream, file) => {
       // If the file is a directory
       if (file.isDirectory()) {
-        // Setup a suffix variable
-        var suffix = '';
+        // Setup a suffix constiable
+        let suffix = '';
 
         // If separate polyfill files enabled
         if (settings.polyfills) {
@@ -141,15 +141,15 @@ var buildScripts = function (done) {
           suffix = '.polyfills';
 
           // Grab files that aren't polyfills, concatenate them, and process them
-          src([file.path + '/*.js', '!' + file.path + '/*' + paths.scripts.polyfills])
-            .pipe(concat(file.relative + '.js'))
+          src([`${file.path}/*.js`, `!${file.path}/*${paths.scripts.polyfills}`])
+            .pipe(concat(`${file.relative}.js`))
             .pipe(jsTasks());
         }
 
         // Grab all files and concatenate them
         // If separate polyfills enabled, this will have .polyfills in the filename
-        src(file.path + '/*.js')
-          .pipe(concat(file.relative + suffix + '.js'))
+        src(`${file.path}/*.js`)
+          .pipe(concat(`${file.relative + suffix}.js`))
           .pipe(jsTasks());
 
         return stream;
@@ -161,17 +161,8 @@ var buildScripts = function (done) {
   );
 };
 
-// Lint scripts
-var lintScripts = function (done) {
-  // Make sure this feature is activated before running
-  if (!settings.scripts) return done();
-
-  // Lint scripts
-  return src(paths.scripts.input).pipe(jshint()).pipe(jshint.reporter('jshint-stylish'));
-};
-
 // Process, lint, and minify Sass files
-var buildStyles = function (done) {
+const buildStyles = function (done) {
   // Make sure this feature is activated before running
   if (!settings.styles) return done();
 
@@ -180,7 +171,7 @@ var buildStyles = function (done) {
     .pipe(
       sass({
         outputStyle: 'expanded',
-        sourceComments: true,
+        sourceComments: false,
       })
     )
     .pipe(
@@ -191,6 +182,7 @@ var buildStyles = function (done) {
         }),
       ])
     )
+    .pipe(purgecss({ content: ['src/*.html'] }))
     .pipe(header(banner.main, { package: packageJSON }))
     .pipe(dest(paths.styles.output))
     .pipe(rename({ suffix: '.min' }))
@@ -207,7 +199,7 @@ var buildStyles = function (done) {
 };
 
 // Optimize SVG files
-var buildSVGs = function (done) {
+const buildSVGs = function (done) {
   // Make sure this feature is activated before running
   if (!settings.svgs) return done();
 
@@ -216,7 +208,7 @@ var buildSVGs = function (done) {
 };
 
 // Copy static files into output folder
-var copyFiles = function (done) {
+const copyFiles = function (done) {
   // Make sure this feature is activated before running
   if (!settings.static) return done();
 
@@ -225,7 +217,7 @@ var copyFiles = function (done) {
 };
 
 // Copy static files into output folder
-var copyHTMLFiles = function (done) {
+const copyHTMLFiles = function (done) {
   // Make sure this feature is activated before running
   if (!settings.html) return done();
 
@@ -234,7 +226,7 @@ var copyHTMLFiles = function (done) {
 };
 
 // Watch for changes to the src directory
-var startServer = function (done) {
+const startServer = function (done) {
   // Make sure this feature is activated before running
   if (!settings.reload) return done();
 
@@ -250,14 +242,14 @@ var startServer = function (done) {
 };
 
 // Reload the browser when files change
-var reloadBrowser = function (done) {
+const reloadBrowser = function (done) {
   if (!settings.reload) return done();
   browserSync.reload();
   done();
 };
 
 // Watch for changes
-var watchSource = function (done) {
+const watchSource = function (done) {
   watch(paths.input, series(exports.default, reloadBrowser));
   done();
 };
@@ -268,10 +260,7 @@ var watchSource = function (done) {
 
 // Default task
 // gulp
-exports.default = series(
-  cleanDist,
-  parallel(buildScripts, lintScripts, buildStyles, buildSVGs, copyFiles, copyHTMLFiles)
-);
+exports.default = series(cleanDist, parallel(buildScripts, buildStyles, buildSVGs, copyFiles, copyHTMLFiles));
 
 // Watch and reload
 // gulp watch
