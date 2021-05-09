@@ -23,66 +23,105 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fe-star:before {
+  content: '\f005';
+}
+.fe-arrow-left:before {
+  content: '\e913';
+}
+.fe-arrow-right:before {
+  content: '\e91b';
+}
 .fe-briefcase:before {
   content: '\e900';
 }
 .fe-check:before {
   content: '\e901';
 }
-.fe-chevron-down:before {
+.fe-check-circle:before {
   content: '\e902';
 }
-.fe-chevron-left:before {
+.fe-chevron-down:before {
   content: '\e903';
 }
-.fe-chevron-right:before {
+.fe-chevron-left:before {
   content: '\e904';
 }
-.fe-chevron-up:before {
+.fe-chevron-right:before {
   content: '\e905';
 }
-.fe-heart:before {
+.fe-chevron-up:before {
   content: '\e906';
 }
-.fe-log-in:before {
+.fe-corner-down-right:before {
   content: '\e907';
 }
-.fe-log-out:before {
+.fe-download:before {
   content: '\e908';
 }
-.fe-menu:before {
+.fe-eye:before {
+  content: '\e91f';
+}
+.fe-eye-off:before {
+  content: '\e920';
+}
+.fe-github:before {
+  content: '\e91c';
+}
+.fe-heart:before {
   content: '\e909';
 }
-.fe-search:before {
+.fe-log-in:before {
   content: '\e90a';
 }
-.fe-shopping-cart:before {
+.fe-log-out:before {
   content: '\e90b';
 }
-.fe-star:before {
-  content: '\e914';
-}
-.fe-tag:before {
+.fe-menu:before {
   content: '\e90c';
 }
-.fe-tool:before {
+.fe-refresh-cw:before {
   content: '\e90d';
 }
-.fe-truck:before {
+.fe-search:before {
   content: '\e90e';
 }
-.fe-user:before {
+.fe-share-2:before {
   content: '\e90f';
 }
-.fe-user-plus:before {
+.fe-shopping-cart:before {
   content: '\e910';
 }
-.fe-x:before {
+.fe-thumbs-down:before {
   content: '\e911';
 }
-.fe-zoom-in:before {
+.fe-thumbs-up:before {
   content: '\e912';
 }
+.fe-trash-2:before {
+  content: '\e91d';
+}
+.fe-truck:before {
+  content: '\e914';
+}
+.fe-twitter:before {
+  content: '\e91e';
+}
+.fe-upload:before {
+  content: '\e915';
+}
+.fe-user:before {
+  content: '\e916';
+}
+.fe-x:before {
+  content: '\e917';
+}
+.fe-x-circle:before {
+  content: '\e918';
+}
+.fe-zoom-in:before {
+  content: '\e919';
+}
 .fe-zoom-out:before {
-  content: '\e913';
+  content: '\e91a';
 }
