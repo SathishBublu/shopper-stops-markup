@@ -48,6 +48,19 @@
   &.fixed-right {
     padding-right: 0 !important;
   }
+
+  &.fixed-right.fade &-dialog-vertical {
+    transform: translateX(100%);
+  }
+
+  &.fixed-right.show &-dialog-vertical {
+    transform: translateX(0);
+  }
+
+  &.show &-dialog-vertical {
+    transform: translateX(0);
+    transition: transform 0.28s ease 0.15s, opacity 0.25s linear;
+  }
 }
 
 /*! purgecss end ignore */
