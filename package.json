@@ -65,6 +65,7 @@
     "bootstrap-table": "^1.18.3",
     "flickity": "^2.2.2",
     "list.js": "^2.3.1",
-    "simplebar": "^5.3.2"
+    "simplebar": "^5.3.2",
+    "swiper": "^6.5.9"
   }
 }
