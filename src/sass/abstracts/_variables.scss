@@ -57,3 +57,17 @@ $modal-content-border-radius: 0rem;
 
 // Inputs
 $input-focus-border-color: shade-color($dark, 50%);
+$input-border-radius: 0rem;
+$input-border-radius-sm: 0rem;
+$input-border-radius-lg: 0rem;
+
+// Forms
+$form-feedback-valid-color: $success;
+$form-feedback-invalid-color: $danger;
+
+$form-feedback-icon-valid-color: $form-feedback-valid-color;
+$form-feedback-icon-invalid-color: $form-feedback-invalid-color;
+
+$form-feedback-icon-invalid: none;
+
+$form-feedback-icon-valid: none;
