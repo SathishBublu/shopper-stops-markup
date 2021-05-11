@@ -1,0 +1,26 @@
+.bg-cover {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+.bg-dark-5 {
+  background-color: rgba(31, 31, 31, 0.05) !important;
+}
+
+.bg-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.bg-dark-5.bg-hover:hover {
+  background-color: rgba(31, 31, 31, 0.15) !important;
+}
+
+.bg-dark-5.bg-hover:hover i {
+  margin-left: 0.8rem !important;
+  transition: margin-left 0.3s ease;
+}
+
+.bg-dark-5.bg-hover:not(:hover) i {
+  transition: margin-left 0.1s ease;
+}

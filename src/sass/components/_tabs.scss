@@ -1,0 +1,16 @@
+[data-bs-toggle^='tab'] {
+  position: relative;
+
+  &.active {
+    color: $primary !important;
+  }
+
+  &.active::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.25rem;
+    border-bottom: 1px solid $primary;
+  }
+}

@@ -1,0 +1,23 @@
+// ------- Colors ------- //
+
+$primary: #ff6f61;
+$secondary: #a6a6a6;
+$success: #28bb74;
+$info: #3b86ff;
+$warning: #ff9736;
+$danger: #ff4c3b;
+$light: #ffffff;
+$light-grey: #f5f5f5;
+$dark: #1f1f1f;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'light-grey': $light-grey,
+  'dark': $dark,
+);

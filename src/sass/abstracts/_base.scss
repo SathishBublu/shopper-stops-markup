@@ -1,8 +1,53 @@
 body {
   font-family: 'Jost', sans-serif;
-  font-size: 16px !important;
 }
 
 strong {
   font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+
+  &.link-underline {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-weight: 500;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-bottom: 1px solid;
+      transform-origin: left center;
+      transition: all 0.2s ease-in-out;
+      transition-property: transform;
+    }
+
+    &:hover::before {
+      transform-origin: right center;
+      transform: scaleX(0);
+    }
+  }
+}
+
+.form-select-sm {
+  padding-right: 3.125rem;
+}
+
+.error-emoji {
+  font-size: 50px !important;
+}
+
+footer a {
+  color: $secondary;
+
+  &:hover {
+    color: shade-color($secondary, 30%);
+  }
 }

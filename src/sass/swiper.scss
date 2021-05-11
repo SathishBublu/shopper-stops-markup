@@ -1,0 +1,26 @@
+// Colors
+@import './abstracts/colors';
+
+/*! purgecss start ignore */
+
+// Swiper core
+@import '../../node_modules/swiper/swiper.scss';
+
+// Swiper scss partials
+@import '../../node_modules/swiper/components/pagination/pagination.scss';
+
+.swiper {
+  &-pagination {
+    &-bullet {
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: $secondary;
+
+      &-active {
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+/*! purgecss end ignore */

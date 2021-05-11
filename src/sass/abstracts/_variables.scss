@@ -1,54 +1,59 @@
-// ------- Colors ------- //
+@import './colors';
 
-$primary: #ff6f61;
-$secondary: #a6a6a6;
-$success: #28bb74;
-$info: #3b86ff;
-$warning: #ff9736;
-$danger: #ff4c3b;
-$light: #ffffff;
-$dark: #1f1f1f;
-
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'light': $light,
-  'dark': $dark,
-);
-
-// Links
-
-$link-color: $dark !important;
-$link-hover-color: $primary !important;
+// Inputs
+$input-btn-padding-y: 0.875rem;
+$input-btn-padding-x: 1.5rem;
+$input-btn-focus-width: 0rem;
 
 // Fonts
-
 $font-weight-normal: 400;
 $font-weight-bold: 500;
 
 // Navbar
-
 $nav-link-font-weight: $font-weight-bold;
+
+$nav-link-color: $dark !important;
+$nav-link-hover-color: $primary !important;
+
 $nav-tabs-link-active-color: $primary !important;
 
 $navbar-nav-link-padding-x: 0.8rem !important;
 
 $navbar-toggler-font-size: 1.75rem !important;
+
 $navbar-light-toggler-color: $dark !important;
 $navbar-light-toggler-border-color: none !important;
+
 $navbar-toggler-border-radius: 0 !important;
 $navbar-toggler-padding-y: 0.08rem;
 $navbar-toggler-padding-x: 0.4rem;
 
 // Dropdowns
-
 $dropdown-link-color: shade-color($secondary, 45%) !important;
 $dropdown-link-hover-color: $dark !important;
 $dropdown-link-hover-bg: $light !important;
 
 // Transition => .collapse
-$transition-collapse: height 0.75s ease !important;
+$transition-collapse: height 0.3s ease;
+
+// Buttons
+$btn-font-weight: $font-weight-bold;
+$btn-box-shadow: none;
+$btn-border-radius: 0rem;
+$btn-border-radius-sm: 0rem;
+$btn-border-radius-lg: 0rem;
+
+// Cards
+$card-border-radius: 0rem;
+$card-border-color: transparent;
+
+// Modal
+
+$modal-header-padding-y: 2rem !important;
+$modal-header-padding-x: 1rem !important;
+
+$modal-content-border-width: 0rem;
+$modal-content-border-radius: 0rem;
+
+// Inputs
+$input-focus-border-color: shade-color($dark, 50%);

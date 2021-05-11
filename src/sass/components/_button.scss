@@ -1,0 +1,17 @@
+.btn {
+  &-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  &-light-primary:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: $light;
+  }
+}

@@ -1,0 +1,53 @@
+/*! purgecss start ignore */
+.modal {
+  &-open {
+    background-color: rgba($color: $dark, $alpha: 0.4);
+  }
+
+  &-btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 01rem;
+    display: inline-flex;
+    padding: 0.3rem 0.5rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  &-top-btn-close {
+    top: 0;
+    right: 0;
+    padding: 0 0;
+  }
+
+  &-body {
+    padding: 0rem;
+  }
+
+  &-header {
+    padding: 1rem;
+  }
+
+  &-title {
+    flex: 1;
+    text-align: center;
+  }
+
+  &-dialog {
+    &-vertical {
+      margin-left: auto;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      max-width: 470px;
+      height: inherit;
+    }
+  }
+
+  &.fixed-right {
+    padding-right: 0 !important;
+  }
+}
+
+/*! purgecss end ignore */

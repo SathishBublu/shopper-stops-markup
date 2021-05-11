@@ -1,0 +1,51 @@
+.card {
+  .card-img {
+    position: relative;
+    overflow: hidden;
+
+    .card-actions {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
+      padding: 1.25rem;
+
+      & .card-action {
+        opacity: 0;
+        transform: translateY(3.5rem);
+        transition: transform 0.15s ease, opacity 0.13s ease;
+
+        &:not(:first-child) {
+          margin-left: 0.8rem;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 0.1s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 0.15s;
+        }
+      }
+    }
+
+    &:hover .card-actions .card-action {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &-badge {
+    position: absolute;
+    top: 1.25rem;
+    z-index: 1;
+
+    &-left {
+      left: 0;
+    }
+
+    &-right {
+      right: 0;
+    }
+  }
+}

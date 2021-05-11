@@ -1,0 +1,28 @@
+/*! purgecss start ignore */
+@import url('../../node_modules/flickity/dist/flickity.min.css');
+
+.flickity-carousel {
+  & .flickity-carousel-cell {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* cell number */
+  & .flickity-carousel-cell:before {
+    display: block;
+  }
+
+  &:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+  }
+
+  @media screen and (min-width: 992px) {
+    /* disable Flickity for large devices */
+    &:after {
+      content: '';
+    }
+  }
+}
+
+/*! purgecss end ignore */
