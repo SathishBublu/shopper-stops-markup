@@ -30,7 +30,7 @@
           </div>
           <div class="modal-body">
             <ul class="list-group list-group-lg list-group-flush">
-              <li class="list-group-item">
+              <li class="list-group-item bg-transparent border-0 text-reset">
                 <div class="row align-items-center">
                   <div class="col-4">
                     <!-- Image -->
@@ -277,6 +277,18 @@
                       </div>
                     </div>
                     <div class="bs-stepper-content">
+                      <!-- Errors alert -->
+                      <div class="alert-wrapper">
+                        <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <ul class="list-group list-group-flush list-group-numbered">
+                            <li class="list-group-item bg-transparent border-0">Email is already taken.</li>
+                            <li class="list-group-item bg-transparent border-0">Required fields are missing.</li>
+                          </ul>
+                          <button type="button" class="btn btn-close fs-5" data-bs-dismiss="alert" aria-label="Close">
+                            <i class="fe fe-x"></i>
+                          </button>
+                        </div> -->
+                      </div>
                       <div id="register-part" class="content" role="tabpanel" aria-labelledby="register-part-trigger">
                         <!-- Account step content -->
                         <div class="row">
@@ -364,12 +376,12 @@
                         <!-- Personal details content -->
                         <div class="row">
                           <div class="col-12 mb-3">
-                            <label class="visually-hidden" for="mobilePhone">Mobile Phone *</label>
+                            <label class="visually-hidden" for="mobilePhone">Mobile No. *</label>
                             <input
                               class="form-control"
                               id="mobilePhone"
                               type="tel"
-                              placeholder="Mobile Phone"
+                              placeholder="Mobile No. *"
                               required=""
                             />
                             <div class="invalid-feedback">Please provide your mobile no.</div>
@@ -377,7 +389,13 @@
 
                           <div class="col-12 mb-3">
                             <label class="visually-hidden" for="district">District *</label>
-                            <input class="form-control" id="district" type="text" placeholder="District" required="" />
+                            <input
+                              class="form-control"
+                              id="district"
+                              type="text"
+                              placeholder="District *"
+                              required=""
+                            />
                           </div>
                           <div class="col-12 mb-3">
                             <label class="visually-hidden" for="addressLineOne">Address Line 1 *</label>
@@ -385,14 +403,19 @@
                               class="form-control"
                               id="addressLineOne"
                               type="text"
-                              placeholder="Address Line 1"
+                              placeholder="Address Line 1 *"
                               required=""
                             />
                             <div class="invalid-feedback">Please provide your address.</div>
                           </div>
                           <div class="col-12 mb-3">
-                            <label class="visually-hidden" for="addressLineTwo">Address Line 2</label>
-                            <input class="form-control" id="addressLineTwo" type="text" placeholder="Address Line 2" />
+                            <label class="visually-hidden" for="addressLineTwo">Address Line 2 *</label>
+                            <input
+                              class="form-control"
+                              id="addressLineTwo"
+                              type="text"
+                              placeholder="Address Line 2 *"
+                            />
                           </div>
                           <div class="col-12 col-md-6 mb-3">
                             <label class="visually-hidden" for="townCity">Town / City *</label>
@@ -400,19 +423,24 @@
                               class="form-control"
                               id="townCity"
                               type="text"
-                              placeholder="Town / City"
+                              placeholder="Town / City *"
                               required=""
                             />
                             <div class="invalid-feedback">Please provide your living town / city name.</div>
                           </div>
                           <div class="col-12 col-md-6 mb-3">
                             <label class="visually-hidden" for="pincode">Pin Code *</label>
-                            <input class="form-control" id="pincode" type="text" placeholder="Pin Code" required="" />
+                            <input class="form-control" id="pincode" type="text" placeholder="Pin Code *" required="" />
                             <div class="invalid-feedback">Please provide your pincode.</div>
                           </div>
                           <div class="col-12">
                             <button class="btn bs-stepper-previous btn-outline-dark">Previous</button>
-                            <button class="btn btn-dark">Register</button>
+                            <button class="btn btn-dark text-center d-inline-flex align-items-center">
+                              <!-- <div class="spinner-border spinner-border-sm text-light me-2" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                              </div> -->
+                              <span class="register-btn-text">Register</span>
+                            </button>
                           </div>
                         </div>
                       </div>
