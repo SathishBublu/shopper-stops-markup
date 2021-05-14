@@ -286,12 +286,12 @@
     <!-- TODO: Need to be validated by own strict script -->
 
     <!-- Login Form -->
-    <section class="py-5 bg-light-grey">
+    <section class="py-3 py-md-5 bg-light-grey">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <!-- Card -->
-            <div class="card card-lg mb-5 mb-md-0">
+            <div class="card card-lg">
               <div class="card-body">
                 <!-- Heading -->
                 <div class="text-center mb-4">
@@ -302,21 +302,19 @@
                 <!-- Form -->
                 <form class="needs-validation" novalidate>
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                       <!-- Email -->
-                      <div class="mb-3">
-                        <label class="visually-hidden" for="loginEmail"> Email Address * </label>
-                        <input
-                          class="form-control"
-                          id="loginEmail"
-                          type="email"
-                          placeholder="Email Address *"
-                          required=""
-                        />
-                        <div class="invalid-feedback">Please provide your email address.</div>
-                      </div>
+                      <label class="visually-hidden" for="loginEmail"> Email Address * </label>
+                      <input
+                        class="form-control"
+                        id="loginEmail"
+                        type="email"
+                        placeholder="Email Address *"
+                        required=""
+                      />
+                      <div class="invalid-feedback">Please provide your email address.</div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                       <!-- Password -->
                       <div class="mb-3">
                         <label class="visually-hidden" for="loginPassword"> Password * </label>
@@ -330,18 +328,16 @@
                         />
                         <div class="invalid-feedback">Password should be atleast 8 character's.</div>
                       </div>
-                      <div class="form-check mb-3">
+                      <div class="form-check">
                         <input class="form-check-input toggle-password" type="checkbox" id="toggle-password-check" />
                         <label class="form-check-label toggle-password-text" for="toggle-password-check">
                           Show Password
                         </label>
                       </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 mb-3">
                       <!-- Link -->
-                      <div class="mb-3">
-                        <a class="font-size-sm text-primary text-reset" href="/register.html">Create new account?</a>
-                      </div>
+                      <a class="font-size-sm text-primary text-reset" href="/register.html">Create new account?</a>
                     </div>
                     <div class="col-6 text-end">
                       <!-- Link -->
