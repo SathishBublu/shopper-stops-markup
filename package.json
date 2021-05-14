@@ -63,6 +63,7 @@
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.0-beta3",
     "bootstrap-table": "^1.18.3",
+    "bs-stepper": "^1.7.0",
     "flickity": "^2.2.2",
     "list.js": "^2.3.1",
     "simplebar": "^5.3.2",

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Shopper Stops</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/feathers.min.css" />
+    <link rel="stylesheet" href="css/bsstepper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+  </head>
+  <body>
+    <!-- Checkout Modal -->
+    <div
+      class="modal shopping-modal fixed-right fade"
+      id="modalShoppingCart"
+      tabindex="-1"
+      aria-labelledby="modalShoppingCartLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-vertical">
+        <div class="modal-content">
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title mx-auto" id="modalShoppingCartLabel">Your Cart (2)</h5>
+            <button type="button" class="modal-btn-close btn btn-light" data-bs-dismiss="modal" aria-label="Close">
+              <i class="fe fe-x fs-5 text-secondary"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group list-group-lg list-group-flush">
+              <li class="list-group-item">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <!-- Image -->
+                    <a href="./product.html">
+                      <img class="img-fluid" src="./static/images/products/product-2.jpg" alt="..." />
+                    </a>
+                  </div>
+                  <div class="col-8">
+                    <!-- Title -->
+                    <p class="fw-bold mb-3">
+                      <a class="fs-6 text-dark" href="./product.html">Cotton floral print Dress</a>
+                      <br />
+                      <span class="text-muted">$40.00</span>
+                    </p>
+
+                    <!--Footer -->
+                    <div class="d-flex align-items-center">
+                      <!-- Select -->
+                      <select class="form-select form-select-sm w-auto">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                      </select>
+
+                      <!-- Remove -->
+                      <a class="ms-auto link-secondary" href="#!"> <i class="fe fe-x"></i> Remove </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <!-- Image -->
+                    <a href="./product.html">
+                      <img class="img-fluid" src="./static/images/products/product-4.jpg" alt="..." />
+                    </a>
+                  </div>
+                  <div class="col-8">
+                    <!-- Title -->
+                    <p class="fw-bold mb-3">
+                      <a class="fs-6 text-dark" href="./product.html">Suede cross body Bag</a>
+                      <br />
+                      <span class="text-muted">$49.00</span>
+                    </p>
+
+                    <!--Footer -->
+                    <div class="d-flex align-items-center">
+                      <!-- Select -->
+                      <select class="form-select form-select-sm w-auto">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                      </select>
+
+                      <!-- Remove -->
+                      <a class="ms-auto link-secondary" href="#!"> <i class="fe fe-x"></i> Remove </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer bg-light-grey mt-5 py-4">
+            <strong>Subtotal</strong> <strong class="ms-auto">$89.00</strong>
+          </div>
+          <div class="modal-body py-3 px-4">
+            <a class="btn btn-dark d-block w-100 mb-3" href="./checkout.html">Continue to Checkout</a>
+            <a class="btn btn-outline-dark d-block w-100" href="./shopping-cart.html">View Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-3 border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="/">Shopper Stops.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fe fe-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=men">Men</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=women">Women</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=kids">Kids</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <!-- ### If there is no user is logged in show this buttons -->
+
+            <!-- Login -->
+            <!-- <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./login.html">
+            <i class="fe fe-log-in me-1"></i>
+            Login
+          </a>
+        </li>
+      -->
+
+            <!-- Register -->
+            <!--
+        <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./register.html">
+            <i class="fe fe-user-plus me-1"></i>
+            Register
+          </a>
+        </li>
+        -->
+
+            <!-- ### Else if there is logged in user show these button -->
+            <!-- ### Need to be implemented in the future ### -->
+            <!-- <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="modal" href="#modalSearch">
+            <i class="fe fe-search"></i>
+          </a>
+        </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="accountDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fe fe-user"></i>
+                <span class="d-lg-none">example@gmail.com</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="accountDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/account.html">Account</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-orders.html">Orders</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-address.html">Shipping Address</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./account-wishlist.html">
+                <i class="fe fe-heart"></i>
+                <span class="d-lg-none">Wishlist</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalShoppingCart">
+                <span data-cart-items="2">
+                  <i class="fe fe-shopping-cart"></i>
+                </span>
+                <span class="d-lg-none ms-2">Cart</span>
+              </a>
+            </li>
+            <li class="nav-item ml-lg-n4">
+              <a class="nav-link" href="./logout.html">
+                <i class="fe fe-log-out me-1"></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- TODO: Need to be validated by own strict script -->
+    <!-- Register Form -->
+    <section class="py-3 py-md-5 bg-light-grey">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <!-- Card -->
+            <div class="card card-lg">
+              <div class="card-body">
+                <!-- Heading -->
+                <div class="text-center mb-4">
+                  <!-- <img class="mb-4" src="" alt="" width="72" height="72" /> -->
+                  <h3>Create your account</h3>
+                </div>
+
+                <!-- Form -->
+                <form class="needs-validation" novalidate>
+                  <div class="bs-stepper">
+                    <div class="bs-stepper-header mb-3" role="tablist">
+                      <!-- your steps here -->
+                      <div class="step" data-target="#register-part">
+                        <button
+                          type="button"
+                          class="step-trigger px-3 py-3"
+                          role="tab"
+                          aria-controls="register-part"
+                          id="register-part-trigger"
+                        >
+                          <span class="m-0 bs-stepper-circle me-sm-1">1</span>
+                          <span class="m-0 bs-stepper-label">Account</span>
+                        </button>
+                      </div>
+                      <div class="line"></div>
+                      <div class="step" data-target="#personal-details">
+                        <button
+                          type="button"
+                          class="step-trigger px-3 py-3"
+                          role="tab"
+                          aria-controls="personal-details"
+                          id="personal-details-trigger"
+                        >
+                          <span class="m-0 bs-stepper-circle me-sm-1">2</span>
+                          <span class="m-0 bs-stepper-label">Personal Details</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="bs-stepper-content">
+                      <div id="register-part" class="content" role="tabpanel" aria-labelledby="register-part-trigger">
+                        <!-- Account step content -->
+                        <div class="row">
+                          <!-- Email -->
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="registerFirstName"> First Name * </label>
+                            <input
+                              class="form-control"
+                              id="registerFirstName"
+                              type="text"
+                              placeholder="First Name *"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide your First name.</div>
+                          </div>
+                          <!-- Email -->
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="registerLastName"> Last Name * </label>
+                            <input
+                              class="form-control"
+                              id="registerLastName"
+                              type="text"
+                              placeholder="Last Name *"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide your Last name.</div>
+                          </div>
+                          <!-- Email -->
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="registerEmail"> Email Address * </label>
+                            <input
+                              class="form-control"
+                              id="registerEmail"
+                              type="email"
+                              placeholder="Email Address *"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide yourr email address.</div>
+                          </div>
+                          <!-- Password -->
+                          <div class="col-12 col-md-6 mb-3">
+                            <label class="visually-hidden" for="registerPassword"> Password * </label>
+                            <input
+                              class="form-control"
+                              id="registerPassword"
+                              type="password"
+                              placeholder="Password *"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide your password.</div>
+                          </div>
+                          <!-- Password -->
+                          <div class="col-12 col-md-6 mb-3">
+                            <label class="visually-hidden" for="registerPasswordConfirm"> Confirm Password * </label>
+                            <input
+                              class="form-control"
+                              id="registerPasswordConfirm"
+                              type="password"
+                              placeholder="Confrm Password *"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please confirm your password.</div>
+                          </div>
+                          <!-- Button -->
+                          <div class="col-12 mb-3">
+                            <div class="row">
+                              <div class="col-md-3 col-12 mb-3 mb-md-0">
+                                <button class="btn btn-block btn-dark bs-stepper-next">Next</button>
+                              </div>
+                              <div
+                                class="col-md-9 col-12 d-flex align-items-center justify-content-center justify-content-md-end"
+                              >
+                                <a href="/login.html" class="text-dark d-block">Already have an account? Login here.</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        id="personal-details"
+                        class="content"
+                        role="tabpanel"
+                        aria-labelledby="personal-details-trigger"
+                      >
+                        <!-- Personal details content -->
+                        <div class="row">
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="mobilePhone">Mobile Phone *</label>
+                            <input
+                              class="form-control"
+                              id="mobilePhone"
+                              type="tel"
+                              placeholder="Mobile Phone"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide your mobile no.</div>
+                          </div>
+
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="district">District *</label>
+                            <input class="form-control" id="district" type="text" placeholder="District" required="" />
+                          </div>
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="addressLineOne">Address Line 1 *</label>
+                            <input
+                              class="form-control"
+                              id="addressLineOne"
+                              type="text"
+                              placeholder="Address Line 1"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide your address.</div>
+                          </div>
+                          <div class="col-12 mb-3">
+                            <label class="visually-hidden" for="addressLineTwo">Address Line 2</label>
+                            <input class="form-control" id="addressLineTwo" type="text" placeholder="Address Line 2" />
+                          </div>
+                          <div class="col-12 col-md-6 mb-3">
+                            <label class="visually-hidden" for="townCity">Town / City *</label>
+                            <input
+                              class="form-control"
+                              id="townCity"
+                              type="text"
+                              placeholder="Town / City"
+                              required=""
+                            />
+                            <div class="invalid-feedback">Please provide your living town / city name.</div>
+                          </div>
+                          <div class="col-12 col-md-6 mb-3">
+                            <label class="visually-hidden" for="pincode">Pin Code *</label>
+                            <input class="form-control" id="pincode" type="text" placeholder="Pin Code" required="" />
+                            <div class="invalid-feedback">Please provide your pincode.</div>
+                          </div>
+                          <div class="col-12">
+                            <button class="btn bs-stepper-previous btn-outline-dark">Previous</button>
+                            <button class="btn btn-dark">Register</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark" style="background-image: url(/static/svg/patterns.svg)">
+      <div class="py-5">
+        <div class="container">
+          <h4 class="mb-5 text-white text-center display-6">Shopper Stops.</h4>
+
+          <div class="row">
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Support</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-5 mb-sm-0">
+                <li>
+                  <a href="./contact-us.html">Contact Us</a>
+                </li>
+                <li>
+                  <a href="./faq.html">FAQs</a>
+                </li>
+                <li>
+                  <a href="./shipping-and-returns.html">Shipping &amp; Returns</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Shop</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-5 mb-sm-0">
+                <li>
+                  <a href="./shop.html">Men's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Women's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Kid's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Discounts</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Company</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="./about.html">Our Story</a>
+                </li>
+                <li>
+                  <a href="#!">Careers</a>
+                </li>
+                <li>
+                  <a href="#!">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a href="#!">Privacy &amp; Cookie policy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Contact</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="tel:1-202-555-0105"> <i class="fe fe-phone"></i> 1-202-555-0105</a>
+                </li>
+                <li>
+                  <a href="mailto:help@shopperstops.com"> <i class="fe fe-mail"></i> help@shopperstops.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <!-- Copyright -->
+              <p class="mb-md-0 text-muted text-center">© 2021 All rights reserved. Designed by SK.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/index.min.js"></script>
+
+    <!-- Form validation script -->
+    <script>
+      (function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation');
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach((form) => {
+          form.addEventListener(
+            'submit',
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add('was-validated');
+            },
+            false
+          );
+        });
+      })();
+    </script>
+    <script src="js/stepper.min.js"></script>
+  </body>
+</html>
