@@ -46,13 +46,13 @@ a {
   font-size: 3.125rem !important; // 3.125rem => 50px
 }
 
-.list-group-item {
+.nav-list-group .list-group-item {
   color: $secondary;
 }
-.list-group-item.active {
+.nav-list-group .list-group-item.active {
   font-weight: 500;
 }
-.list-group-item.active {
+.nav-list-group .list-group-item.active {
   color: $dark;
   background-color: transparent;
   border-color: $dark;
