@@ -8,6 +8,8 @@ strong {
   font-weight: 500;
 }
 
+/* ////////// Custom ////////// */
+
 a {
   text-decoration: none;
 
@@ -46,6 +48,8 @@ a {
   font-size: 3.125rem !important; // 3.125rem => 50px
 }
 
+/* ////////// Nav list group ////////// */
+
 .nav-list-group .list-group-item {
   color: $secondary;
 }
@@ -57,6 +61,69 @@ a {
   background-color: transparent;
   border-color: $dark;
 }
+
+.nav-list-group .list-group-item + .list-group-item.active {
+  border-top-width: 0;
+  margin-top: -0.0625rem;
+}
+
+.nav-list-group .list-group-item-action:focus,
+.list-group-item-action:hover {
+  background-color: #f8f9fa;
+  color: $dark;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.account-order-image {
+  width: 4.375rem;
+  height: 4.375rem;
+}
+
+.heading-xxxs {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ////////// Pagination ////////// */
+
+.pagination {
+  font-weight: 500;
+}
+
+.pagination-sm {
+  font-size: 0.9375rem;
+}
+
+.page-item .page-link {
+  color: $secondary;
+}
+
+.page-item.active .page-link,
+.page-item .page-link:hover {
+  color: $primary;
+  border-color: $primary;
+  background-color: transparent;
+}
+
+.pagination .page-link {
+  border-width: 0 0 0.0625rem 0;
+  border-bottom: 0.0625rem solid $secondary;
+}
+
+.pagination .page-link.page-link-arrow {
+  border-width: 0rem;
+}
+
+.pagination-sm .page-link {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* ////////// Footer ////////// */
 
 footer a {
   color: $secondary;
