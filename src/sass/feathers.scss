@@ -11,7 +11,6 @@
 .fe {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'feather' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -23,6 +22,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fe-edit-pencil:before {
+  content: '\e921';
+}
 .fe-star:before {
   content: '\f005';
 }
@@ -71,6 +73,9 @@
 .fe-heart:before {
   content: '\e909';
 }
+.fe-info:before {
+  content: '\e922';
+}
 .fe-log-in:before {
   content: '\e90a';
 }
@@ -79,6 +84,9 @@
 }
 .fe-menu:before {
   content: '\e90c';
+}
+.fe-plus:before {
+  content: '\e923';
 }
 .fe-refresh-cw:before {
   content: '\e90d';
