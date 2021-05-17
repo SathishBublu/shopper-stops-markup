@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist | Shopper Stops</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/feathers.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+  </head>
+  <body>
+    <!-- Product Preview Model -->
+    <div
+      class="modal fade"
+      id="modalProductPreview"
+      tabindex="-1"
+      aria-labelledby="modalProductPreviewLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+          <!-- Modal Close button -->
+          <button
+            type="button"
+            class="btn btn-dark btn-close modal-btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="fe fe-x"></i>
+          </button>
+          <div class="container-fluid">
+            <div class="row p-2 p-lg-0">
+              <div class="col-12 col-lg-6 col-xl-5 p-2 py-md-0 px-md-0">
+                <!-- Image -->
+                <img class="img-fluid" src="/static/images/products/product-7.jpg" alt="..." />
+
+                <!-- Button -->
+                <a
+                  class="btn d-block btn-primary text-light d-flex align-items-center justify-content-center"
+                  href="./product.html"
+                >
+                  More Product Info <i class="fe fe-chevron-right ml-2"></i>
+                </a>
+              </div>
+              <div class="col-12 col-lg-6 col-xl-7 pt-5 pb-2 px-md-5 d-flex align-items-center">
+                <!-- Header -->
+                <div class="row mb-2">
+                  <div class="col">
+                    <!-- Preheading -->
+                    <a class="text-muted" href="shop.html">Sneakers</a>
+                  </div>
+
+                  <!-- Heading -->
+                  <h2 class="mb-2">Leather Sneakers</h2>
+
+                  <!-- Price -->
+                  <div class="mb-3">
+                    <span class="fs-4 fw-bold text-gray-350" data-target="productMoney">&#x20B9;115.00</span>
+                  </div>
+
+                  <!-- Form -->
+                  <form>
+                    <div class="form-group mb-4">
+                      <!-- Label -->
+
+                      <div class="row mb-2">
+                        <div class="col-12 col-lg-10">
+                          <p>
+                            Size:
+                            <strong id="modalProductColorCaption">XL</strong>
+                          </p>
+
+                          <div class="mb-5">
+                            <div class="form-check form-check-inline">
+                              <input
+                                data-target="#modalProductColorCaption"
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value="XXL"
+                              />
+                              <label class="form-check-label" for="inlineRadio1">XXL</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input
+                                data-target="#modalProductColorCaption"
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio2"
+                                value="XL"
+                                checked
+                              />
+                              <label class="form-check-label" for="inlineRadio2">XL</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input
+                                data-target="#modalProductColorCaption"
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio3"
+                                value="L"
+                                disabled
+                              />
+                              <label class="form-check-label" for="inlineRadio3">L</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input
+                                data-target="#modalProductColorCaption"
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio4"
+                                value="M"
+                                disabled
+                              />
+                              <label class="form-check-label" for="inlineRadio4">M</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input
+                                data-target="#modalProductColorCaption"
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio5"
+                                value="S"
+                                disabled
+                              />
+                              <label class="form-check-label" for="inlineRadio5">S</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-4">
+                        <div class="col-12 col-lg-auto">
+                          <!-- Quantity -->
+                          <select class="form-select mb-2">
+                            <option value="1" selected="">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-lg">
+                          <!-- Submit -->
+                          <button type="submit" class="btn d-block w-100 btn-dark mb-2">
+                            Add to Cart <i class="fe fe-shopping-cart me-2"></i>
+                          </button>
+                        </div>
+                        <div class="col-12 col-lg-auto">
+                          <!-- Wishlist -->
+                          <button class="btn btn-outline-dark d-block w-100 mb-2" data-toggle="button">
+                            Wishlist <i class="fe fe-heart me-2"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div
+      class="modal shopping-modal fixed-right fade"
+      id="modalShoppingCart"
+      tabindex="-1"
+      aria-labelledby="modalShoppingCartLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-vertical">
+        <div class="modal-content">
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title mx-auto" id="modalShoppingCartLabel">Your Cart (2)</h5>
+            <button type="button" class="modal-btn-close btn btn-light" data-bs-dismiss="modal" aria-label="Close">
+              <i class="fe fe-x fs-5 text-secondary"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group list-group-lg list-group-flush">
+              <li class="list-group-item">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <!-- Image -->
+                    <a href="./product.html">
+                      <img class="img-fluid" src="./static/images/products/product-2.jpg" alt="..." />
+                    </a>
+                  </div>
+                  <div class="col-8">
+                    <!-- Title -->
+                    <p class="fw-bold mb-3">
+                      <a class="fs-6 text-dark" href="./product.html">Cotton floral print Dress</a>
+                      <br />
+                      <span class="text-muted">$40.00</span>
+                    </p>
+
+                    <!--Footer -->
+                    <div class="d-flex align-items-center">
+                      <!-- Select -->
+                      <select class="form-select form-select-sm w-auto">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                      </select>
+
+                      <!-- Remove -->
+                      <a class="ms-auto link-secondary" href="#!"> <i class="fe fe-x"></i> Remove </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <!-- Image -->
+                    <a href="./product.html">
+                      <img class="img-fluid" src="./static/images/products/product-4.jpg" alt="..." />
+                    </a>
+                  </div>
+                  <div class="col-8">
+                    <!-- Title -->
+                    <p class="fw-bold mb-3">
+                      <a class="fs-6 text-dark" href="./product.html">Suede cross body Bag</a>
+                      <br />
+                      <span class="text-muted">$49.00</span>
+                    </p>
+
+                    <!--Footer -->
+                    <div class="d-flex align-items-center">
+                      <!-- Select -->
+                      <select class="form-select form-select-sm w-auto">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                      </select>
+
+                      <!-- Remove -->
+                      <a class="ms-auto link-secondary" href="#!"> <i class="fe fe-x"></i> Remove </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer bg-light-grey mt-5 py-4">
+            <strong>Subtotal</strong> <strong class="ms-auto">$89.00</strong>
+          </div>
+          <div class="modal-body py-3 px-4">
+            <a class="btn btn-dark d-block w-100 mb-3" href="./checkout.html">Continue to Checkout</a>
+            <a class="btn btn-outline-dark d-block w-100" href="./shopping-cart.html">View Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-3 border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="/">Shopper Stops.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fe fe-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=men">Men</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=women">Women</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=kids">Kids</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <!-- ### If there is no user is logged in show this buttons -->
+
+            <!-- Login -->
+            <!-- <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./login.html">
+            <i class="fe fe-log-in me-1"></i>
+            Login
+          </a>
+        </li>
+      -->
+
+            <!-- Register -->
+            <!--
+        <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./register.html">
+            <i class="fe fe-user-plus me-1"></i>
+            Register
+          </a>
+        </li>
+        -->
+
+            <!-- ### Else if there is logged in user show these button -->
+            <!-- ### Need to be implemented in the future ### -->
+            <!-- <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="modal" href="#modalSearch">
+            <i class="fe fe-search"></i>
+          </a>
+        </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="accountDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fe fe-user"></i>
+                <span class="d-lg-none">example@gmail.com</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="accountDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/account.html">Account</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-orders.html">Orders</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-address.html">Shipping Address</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./account-wishlist.html">
+                <i class="fe fe-heart"></i>
+                <span class="d-lg-none">Wishlist</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalShoppingCart">
+                <span data-cart-items="2">
+                  <i class="fe fe-shopping-cart"></i>
+                </span>
+                <span class="d-lg-none ms-2">Cart</span>
+              </a>
+            </li>
+            <li class="nav-item ml-lg-n4">
+              <a class="nav-link" href="./logout.html">
+                <i class="fe fe-log-out me-1"></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <section class="py-4 py-md-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <!-- Heading -->
+            <h3 class="mb-4 mb-md-5">My Account</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <!-- Nav -->
+            <nav class="mb-4 mb-md-5">
+              <div class="list-group list-group-sm list-group-flush nav-list-group">
+                <a
+                  class="list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account.html"
+                >
+                  <span>Personal Info</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+                <a
+                  class="list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account-orders.html"
+                >
+                  <span>Orders</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+                <a
+                  class="active list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account-wishlist.html"
+                >
+                  <span>Wishlist</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+                <a
+                  class="list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account-address.html"
+                >
+                  <span>Shipping Address</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="col-12 col-md-9 col-lg-8 offset-lg-1 pb-3 pb-md-0">
+            <!-- Products -->
+            <div class="row">
+              <!-- Item -->
+              <div class="col-6 col-md-4">
+                <div class="card mb-5">
+                  <!-- Badge -->
+                  <div class="badge bg-light rounded-0 text-dark card-badge card-badge-left text-uppercase">New</div>
+                  <!-- If this product has discount this will have dark badge -->
+                  <!-- <div class="badge bg-dark rounded-0 card-badge card-badge-right text-uppercase">Sale</div> -->
+                  <!-- Image -->
+                  <div class="card-img">
+                    <!-- Action -->
+                    <button
+                      class="btn btn-circle btn-light btn-light-primary card-single-action card-single-action-right"
+                    >
+                      <i class="fe fe-x"></i>
+                    </button>
+
+                    <!-- Image -->
+                    <a href="product.html">
+                      <img class="card-img-top" src="static/images/products/product-5.jpg" alt="..." />
+                    </a>
+
+                    <!-- Actions -->
+                    <div class="card-actions d-flex justify-content-center">
+                      <div class="card-action">
+                        <button
+                          class="btn btn-circle btn-light btn-light-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalProductPreview"
+                        >
+                          <i class="fe fe-eye"></i>
+                        </button>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn btn-circle btn-light btn-light-primary" data-bs-toggle="button">
+                          <i class="fe fe-shopping-cart"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body px-0">
+                    <!-- Category -->
+                    <div>
+                      <a class="text-muted" href="shop.html">Skirts</a>
+                    </div>
+
+                    <!-- Title -->
+                    <a class="fw-bold link-dark" href="product.html">Printed A-line Skirt</a>
+
+                    <!-- Price -->
+                    <div class="fw-bold">
+                      <span class="text-muted">&#x20B9;79.00</span>
+                    </div>
+
+                    <!-- This applies only if there is discount to th product -->
+                    <!-- <div class="fw-bold">
+                      <span class="fs-6 text-gray-350 text-decoration-line-through">&#x20B9;85.00</span>
+                      <span class="text-primary">&#x20B9;85.00</span>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="col-6 col-md-4">
+                <div class="card mb-5">
+                  <!-- Badge -->
+                  <!-- <div class="badge bg-light rounded-0 text-dark card-badge card-badge-left text-uppercase">New</div> -->
+                  <!-- If this product has discount this will have dark badge -->
+                  <!-- <div class="badge bg-dark rounded-0 card-badge card-badge-right text-uppercase">Sale</div> -->
+                  <!-- Image -->
+                  <div class="card-img">
+                    <!-- Action -->
+                    <button
+                      class="btn btn-circle btn-light btn-light-primary card-single-action card-single-action-right"
+                    >
+                      <i class="fe fe-x"></i>
+                    </button>
+
+                    <!-- Image -->
+                    <a href="product.html">
+                      <img class="card-img-top" src="static/images/products/product-4.jpg" alt="..." />
+                    </a>
+
+                    <!-- Actions -->
+                    <div class="card-actions d-flex justify-content-center">
+                      <div class="card-action">
+                        <button
+                          class="btn btn-circle btn-light btn-light-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalProductPreview"
+                        >
+                          <i class="fe fe-eye"></i>
+                        </button>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn btn-circle btn-light btn-light-primary" data-bs-toggle="button">
+                          <i class="fe fe-shopping-cart"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body px-0">
+                    <!-- Category -->
+                    <div>
+                      <a class="text-muted" href="shop.html">Bags</a>
+                    </div>
+
+                    <!-- Title -->
+                    <a class="fw-bold link-dark" href="product.html">Suede cross body Bag</a>
+
+                    <!-- Price -->
+                    <div class="fw-bold">
+                      <span class="text-muted">&#x20B9;85.00</span>
+                    </div>
+
+                    <!-- This applies only if there is discount to th product -->
+                    <!-- <div class="fw-bold">
+                      <span class="fs-6 text-gray-350 text-decoration-line-through">&#x20B9;85.00</span>
+                      <span class="text-primary">&#x20B9;85.00</span>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="d-flex justify-content-center justify-content-md-end mt-5">
+              <ul class="pagination pagination-sm">
+                <li class="page-item">
+                  <a class="page-link page-link-arrow" href="#">
+                    <i class="fe fe-chevron-left"></i>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">6</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link page-link-arrow" href="#">
+                    <i class="fe fe-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark" style="background-image: url(/static/svg/patterns.svg)">
+      <div class="py-5">
+        <div class="container">
+          <h4 class="mb-5 text-white text-center display-6">Shopper Stops.</h4>
+
+          <div class="row">
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Support</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-5 mb-sm-0">
+                <li>
+                  <a href="./contact-us.html">Contact Us</a>
+                </li>
+                <li>
+                  <a href="./faq.html">FAQs</a>
+                </li>
+                <li>
+                  <a href="./shipping-and-returns.html">Shipping &amp; Returns</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Shop</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-5 mb-sm-0">
+                <li>
+                  <a href="./shop.html">Men's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Women's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Kid's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Discounts</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Company</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="./about.html">Our Story</a>
+                </li>
+                <li>
+                  <a href="#!">Careers</a>
+                </li>
+                <li>
+                  <a href="#!">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a href="#!">Privacy &amp; Cookie policy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Contact</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="tel:1-202-555-0105"> <i class="fe fe-phone"></i> 1-202-555-0105</a>
+                </li>
+                <li>
+                  <a href="mailto:help@shopperstops.com"> <i class="fe fe-mail"></i> help@shopperstops.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <!-- Copyright -->
+              <p class="mb-md-0 text-muted text-center">© 2021 All rights reserved. Designed by SK.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/index.min.js"></script>
+  </body>
+</html>

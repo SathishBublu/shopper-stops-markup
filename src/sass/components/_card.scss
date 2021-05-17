@@ -1,7 +1,6 @@
 .card {
   .card-img {
     position: relative;
-    overflow: hidden;
 
     .card-actions {
       position: absolute;
@@ -9,6 +8,7 @@
       z-index: 1;
       width: 100%;
       padding: 1.25rem;
+      overflow: hidden;
 
       & .card-action {
         opacity: 0;
@@ -32,6 +32,16 @@
     &:hover .card-actions .card-action {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .card-single-action {
+      position: absolute;
+      top: 1.25rem;
+      z-index: 1;
+
+      &-right {
+        right: 1.25rem;
+      }
     }
   }
 
