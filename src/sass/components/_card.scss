@@ -33,15 +33,15 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
 
-    .card-single-action {
-      position: absolute;
-      top: 1.25rem;
-      z-index: 1;
+  .card-single-action {
+    position: absolute;
+    top: 1.25rem;
+    z-index: 1;
 
-      &-right {
-        right: 1.25rem;
-      }
+    &-right {
+      right: 1.25rem;
     }
   }
 

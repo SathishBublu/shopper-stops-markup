@@ -14,4 +14,8 @@
     border-color: $primary;
     color: $light;
   }
+
+  &-hover-light-border:hover {
+    border-color: $dark !important;
+  }
 }
