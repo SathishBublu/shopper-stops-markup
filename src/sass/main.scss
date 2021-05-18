@@ -45,11 +45,13 @@
 // ------- Partial Imports ------- //
 @import './abstracts/base';
 
+@import './components/avatar';
 @import './components/button';
 @import './components/card';
 @import './components/modal';
 @import './components/navbar';
 @import './components/rating';
+@import './components/review';
 @import './components/tabs';
 
 @import './layouts/banner';

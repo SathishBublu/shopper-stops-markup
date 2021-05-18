@@ -1,0 +1,19 @@
+.review {
+    position: relative;
+    padding-left: 2.5rem;
+  
+    &:not(:first-child) {
+      margin-top: 1.25rem;
+    }
+  
+    &:not(.review-child) {
+      padding-right: 2.5rem;
+      border: 1px solid #e5e5e5;
+    }
+  
+    &-body {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+  }
+  

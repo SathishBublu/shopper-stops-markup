@@ -1,0 +1,54 @@
+.avatar {
+    position: relative;
+    display: inline-block;
+    width: 6.25rem;
+    height: 6.25rem;
+    font-size: 2.08333rem !important;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+  
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f5f5;
+      color: #ccc;
+    }
+  
+    @media (max-width: map-get($grid-breakpoints, xl)) {
+      &-xl {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.33333rem;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+      &-lg {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 0.75rem;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      &-sm {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.5rem;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      &-md {
+        width: 3.875rem;
+        height: 3.875rem;
+        font-size: 1.33333rem !important;
+      }
+    }
+  }
+  
