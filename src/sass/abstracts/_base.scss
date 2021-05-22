@@ -53,7 +53,14 @@ a {
 }
 
 .error-emoji {
-  font-size: 3.125rem !important; // 3.125rem => 50px
+  font-size: 3.125rem; // 3.125rem => 50px
+}
+
+/* ////////// Nav ////////// */
+
+.nav.flex-column .nav-link {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* ////////// Nav list group ////////// */
@@ -129,6 +136,15 @@ a {
   padding: 0.5rem 1rem;
   font-size: 0.9375rem;
   line-height: 1.5;
+}
+
+/* ////////// Dropdowns ////////// */
+
+.dropdown-toggle::after {
+  content: '\e903';
+  font-family: feather;
+  float: right;
+  border: 0;
 }
 
 /* ////////// Footer ////////// */
