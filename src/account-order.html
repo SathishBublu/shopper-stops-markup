@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders | Shopper Stops</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/feathers.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+  </head>
+  <body>
+    <!-- Checkout Modal -->
+    <div
+      class="modal shopping-modal fixed-right fade"
+      id="modalShoppingCart"
+      tabindex="-1"
+      aria-labelledby="modalShoppingCartLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-vertical">
+        <div class="modal-content">
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title mx-auto" id="modalShoppingCartLabel">Your Cart (2)</h5>
+            <button type="button" class="modal-btn-close btn btn-light" data-bs-dismiss="modal" aria-label="Close">
+              <i class="fe fe-x fs-5 text-secondary"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group list-group-lg list-group-flush">
+              <li class="list-group-item">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <!-- Image -->
+                    <a href="./product.html">
+                      <img class="img-fluid" src="./static/images/products/product-2.jpg" alt="..." />
+                    </a>
+                  </div>
+                  <div class="col-8">
+                    <!-- Title -->
+                    <p class="fw-bold mb-3">
+                      <a class="fs-6 text-dark" href="./product.html">Cotton floral print Dress</a>
+                      <br />
+                      <span class="text-muted">&#x20B9;40.00</span>
+                    </p>
+
+                    <!--Footer -->
+                    <div class="d-flex align-items-center">
+                      <!-- Select -->
+                      <select class="form-select form-select-sm w-auto">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                      </select>
+
+                      <!-- Remove -->
+                      <a class="ms-auto link-secondary" href="#!"> <i class="fe fe-x"></i> Remove </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <!-- Image -->
+                    <a href="./product.html">
+                      <img class="img-fluid" src="./static/images/products/product-4.jpg" alt="..." />
+                    </a>
+                  </div>
+                  <div class="col-8">
+                    <!-- Title -->
+                    <p class="fw-bold mb-3">
+                      <a class="fs-6 text-dark" href="./product.html">Suede cross body Bag</a>
+                      <br />
+                      <span class="text-muted">&#x20B9;49.00</span>
+                    </p>
+
+                    <!--Footer -->
+                    <div class="d-flex align-items-center">
+                      <!-- Select -->
+                      <select class="form-select form-select-sm w-auto">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                      </select>
+
+                      <!-- Remove -->
+                      <a class="ms-auto link-secondary" href="#!"> <i class="fe fe-x"></i> Remove </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer bg-light-grey mt-5 py-4">
+            <strong>Subtotal</strong> <strong class="ms-auto">&#x20B9;89.00</strong>
+          </div>
+          <div class="modal-body py-3 px-4">
+            <a class="btn btn-dark d-block w-100 mb-3" href="./checkout.html">Continue to Checkout</a>
+            <a class="btn btn-outline-dark d-block w-100" href="./shopping-cart.html">View Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-3 border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="/">Shopper Stops.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fe fe-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=men">Men</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=women">Women</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/shop.html?category=kids">Kids</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <!-- ### If there is no user is logged in show this buttons -->
+
+            <!-- Login -->
+            <!-- <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./login.html">
+            <i class="fe fe-log-in me-1"></i>
+            Login
+          </a>
+        </li>
+      -->
+
+            <!-- Register -->
+            <!--
+        <li class="nav-item ml-lg-n4">
+          <a class="nav-link" href="./register.html">
+            <i class="fe fe-user-plus me-1"></i>
+            Register
+          </a>
+        </li>
+        -->
+
+            <!-- ### Else if there is logged in user show these button -->
+            <!-- ### Need to be implemented in the future ### -->
+            <!-- <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="modal" href="#modalSearch">
+            <i class="fe fe-search"></i>
+          </a>
+        </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="accountDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fe fe-user"></i>
+                <span class="d-lg-none">example@gmail.com</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="accountDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="/account.html">Account</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-orders.html">Orders</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/account-address.html">Shipping Address</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./account-wishlist.html">
+                <i class="fe fe-heart"></i>
+                <span class="d-lg-none">Wishlist</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalShoppingCart">
+                <span data-cart-items="2">
+                  <i class="fe fe-shopping-cart"></i>
+                </span>
+                <span class="d-lg-none ms-2">Cart</span>
+              </a>
+            </li>
+            <li class="nav-item ml-lg-n4">
+              <a class="nav-link" href="./logout.html">
+                <i class="fe fe-log-out me-1"></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <section class="py-4 py-md-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <!-- Heading -->
+            <h3 class="mb-4 mb-md-5">My Account</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <!-- Nav -->
+            <nav class="mb-4 mb-md-5">
+              <div class="list-group list-group-sm list-group-flush nav-list-group">
+                <a
+                  class="list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account.html"
+                >
+                  <span>Personal Info</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+                <a
+                  class="active list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account-orders.html"
+                >
+                  <span>Orders</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+                <a
+                  class="list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account-wishlist.html"
+                >
+                  <span>Wishlist</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+                <a
+                  class="list-group-item list-group-item-action d-flex justify-content-between bg-transparent py-4 px-0"
+                  href="account-address.html"
+                >
+                  <span>Shipping Address</span>
+                  <i class="fe fe-chevron-right"></i>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="col-12 col-md-9 col-lg-8 offset-lg-1">
+            <!-- Order -->
+            <div class="card card-lg mb-5 border">
+              <div class="card-body pb-0">
+                <!-- Info -->
+                <div class="card card-sm">
+                  <div class="card-body bg-light-grey">
+                    <div class="row">
+                      <div class="col-6 col-lg-3">
+                        <!-- Heading -->
+                        <h6 class="heading-xxxs text-muted">Order No:</h6>
+
+                        <!-- Text -->
+                        <p class="mb-lg-0 font-size-sm fw-bold">673290789</p>
+                      </div>
+                      <div class="col-6 col-lg-3">
+                        <!-- Heading -->
+                        <h6 class="heading-xxxs text-muted">Shipped date:</h6>
+
+                        <!-- Text -->
+                        <p class="mb-lg-0 font-size-sm fw-bold">
+                          <time datetime="2019-10-01"> 01 Oct, 2019 </time>
+                        </p>
+                      </div>
+                      <div class="col-6 col-lg-3">
+                        <!-- Heading -->
+                        <h6 class="heading-xxxs text-muted">Status:</h6>
+
+                        <!-- Text -->
+                        <p class="mb-0 font-size-sm fw-bold">Awating Delivery</p>
+                      </div>
+                      <div class="col-6 col-lg-3">
+                        <!-- Heading -->
+                        <h6 class="heading-xxxs text-muted">Order Amount:</h6>
+
+                        <!-- Text -->
+                        <p class="mb-0 font-size-sm fw-bold">&#x20B9;259.00</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer p-3 bg-transparent">
+                <!-- Heading -->
+                <h5 class="mb-3">Order Items (3)</h5>
+
+                <!-- Divider -->
+                <hr/>
+
+                <!-- List group -->
+                <ul class="list-group list-group-lg list-group-flush">
+                  <li class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col-4 col-md-3 col-xl-2">
+                        <!-- Image -->
+                        <a href="product.html"
+                          ><img src="static/images/products/product-6.jpg" alt="..." class="img-fluid"
+                        /></a>
+                      </div>
+                      <div class="col">
+                        <!-- Title -->
+                        <p class="mb-4 font-size-sm fw-bold">
+                          <a class="text-body" href="product.html">Cotton floral print Dress x 1</a> <br />
+                          <span class="text-muted">&#x20B9;40.00</span>
+                        </p>
+
+                        <!-- Text -->
+                        <div class="font-size-sm text-muted">
+                          Size: M <br />
+                          Color: Red
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col-4 col-md-3 col-xl-2">
+                        <!-- Image -->
+                        <a href="product.html"
+                          ><img src="static/images/products/product-10.jpg" alt="..." class="img-fluid"
+                        /></a>
+                      </div>
+                      <div class="col">
+                        <!-- Title -->
+                        <p class="mb-4 font-size-sm fw-bold">
+                          <a class="text-body" href="product.html">Suede cross body Bag x 1</a> <br />
+                          <span class="text-muted">&#x20B9;49.00</span>
+                        </p>
+
+                        <!-- Text -->
+                        <div class="font-size-sm text-muted">Color: Brown</div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col-4 col-md-3 col-xl-2">
+                        <!-- Image -->
+                        <a href="product.html"
+                          ><img src="static/images/products/product-48.jpg" alt="..." class="img-fluid"
+                        /></a>
+                      </div>
+                      <div class="col">
+                        <!-- Title -->
+                        <p class="mb-4 font-size-sm fw-bold">
+                          <a class="text-body" href="product.html">Sweatshirt with Pocket</a> <br />
+                          <span class="text-muted">&#x20B9;39.00</span>
+                        </p>
+
+                        <!-- Text -->
+                        <div class="font-size-sm text-muted">
+                          Size: L <br />
+                          Color: Pink
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Total -->
+            <div class="card card-lg mb-5 border">
+              <div class="card-body">
+                <!-- Heading -->
+                <h5 class="mb-2">Order Total</h5>
+
+                <!-- List group -->
+                <ul class="list-group list-group-sm list-group-flush">
+                  <li class="list-group-item d-flex py-4 px-0">
+                    <span>Subtotal</span>
+                    <span class="ms-auto">&#x20B9;128.00</span>
+                  </li>
+                  <li class="list-group-item d-flex py-4 px-0">
+                    <span>Tax</span>
+                    <span class="ms-auto">&#x20B9;0.00</span>
+                  </li>
+                  <li class="list-group-item d-flex py-4 px-0">
+                    <span>Shipping</span>
+                    <span class="ms-auto">&#x20B9;8.00</span>
+                  </li>
+                  <li class="list-group-item d-flex py-4 px-0 fs-5 fw-bold">
+                    <span>Total</span>
+                    <span class="ms-auto">&#x20B9;136.00</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div class="card card-lg border">
+              <div class="card-body">
+                <!-- Heading -->
+                <h6 class="mb-4">Billing &amp; Shipping Details</h6>
+
+                <!-- Content -->
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <!-- Heading -->
+                    <p class="mb-4 fw-bold">Shipping Address:</p>
+
+                    <p class="mb-3 mb-md-0 text-gray-500">
+                      Daniel Robinson, <br />
+                      3997 Raccoon Run, <br />
+                      Kingston, 45644, <br />
+                      United States, <br />
+                      6146389574
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!-- Heading -->
+                    <p class="mb-4 fw-bold">Shipping Method:</p>
+
+                    <p class="mb-3 text-gray-500">
+                      Standart Shipping <br />
+                      (5 - 7 days)
+                    </p>
+
+                    <!-- Heading -->
+                    <p class="mb-4 fw-bold">Payment Method:</p>
+
+                    <p class="mb-0 text-gray-500">Card</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark" style="background-image: url(/static/svg/patterns.svg)">
+      <div class="py-5">
+        <div class="container">
+          <h4 class="mb-3 text-white text-center display-6">Shopper Stops.</h4>
+
+          <div class="row">
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Support</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-3 mb-sm-0">
+                <li>
+                  <a href="./contact-us.html">Contact Us</a>
+                </li>
+                <li>
+                  <a href="./faq.html">FAQs</a>
+                </li>
+                <li>
+                  <a href="./shipping-and-returns.html">Shipping &amp; Returns</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Shop</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-3 mb-sm-0">
+                <li>
+                  <a href="./shop.html">Men's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Women's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Kid's Shopping</a>
+                </li>
+                <li>
+                  <a href="./shop.html">Discounts</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Company</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="./about.html">Our Story</a>
+                </li>
+                <li>
+                  <a href="#!">Careers</a>
+                </li>
+                <li>
+                  <a href="#!">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a href="#!">Privacy &amp; Cookie policy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm">
+              <!-- Heading -->
+              <h6 class="mb-4 text-white">Contact</h6>
+
+              <!-- Links -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="tel:1-202-555-0105"> <i class="fe fe-phone"></i> 1-202-555-0105</a>
+                </li>
+                <li>
+                  <a href="mailto:help@shopperstops.com"> <i class="fe fe-mail"></i> help@shopperstops.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <!-- Copyright -->
+              <p class="mb-md-0 text-muted text-center">© 2021 All rights reserved. Designed by SK.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/index.min.js"></script>
+  </body>
+</html>
