@@ -56,6 +56,16 @@ a {
   font-size: 3.125rem; // 3.125rem => 50px
 }
 
+.emoji-size-1 {
+  font-size: 3.125rem; // 3.125rem => 50px
+}
+.emoji-size-2 {
+  font-size: 2.5rem; // 3.125rem => 40px
+}
+.emoji-size-3 {
+  font-size: 1.875rem; // 3.125rem => 30px
+}
+
 /* ////////// Nav ////////// */
 
 .nav.flex-column .nav-link {
@@ -145,6 +155,29 @@ a {
   font-family: feather;
   float: right;
   border: 0;
+}
+
+/* ////////// Track Order ////////// */
+
+.status-box {
+  .status-line .date-text {
+    display: none;
+  }
+
+  .status-line.step-completed {
+    color: $secondary;
+
+    span.status-text {
+      text-decoration: line-through;
+    }
+
+    span.date-text {
+      display: inline;
+    }
+  }
+  .status-line.current-process {
+    color: $primary;
+  }
 }
 
 /* ////////// Footer ////////// */
